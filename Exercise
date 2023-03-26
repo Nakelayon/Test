@@ -1,0 +1,22 @@
+from tkinter import*
+from random import*
+def change():
+  canvas.delete (ALL)
+  figure = randint(0, 2)
+  x = randint(0, 300)
+  y = randint(0, 300)
+  a = randint(0, 300)
+  b = randint(0, 300)
+  lstColors = 'green'
+  if figure == 0:
+    canvas.create_rectangle(x, y, a, b, fill = lstColors)
+  elif figure == 1:
+    canvas.create_oval(x, y, a, b, fill = lstColors)
+  elif figure == 2:
+    canvas.create_polygon(x, y, a, b, x, b, fill = lstColors)
+root=Tk()
+root.title("фигуры")
+canvas=Canvas(root, width=400, height=400, bg = "white")
+canvas.pack()
+button=Button(text="нажми", command = change).pack()
+root.mainloop()
